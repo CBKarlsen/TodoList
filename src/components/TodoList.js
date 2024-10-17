@@ -5,25 +5,27 @@ function TodoList() {
     const [tasks, setTasks] = useState([
         {
             id: 1,
-            text: 'Create a react project ✋',
+            text: 'Take out the trash✋',
             completed: true,
-            time: '5:23 AM, 01/06/2022'
+            time: '12:35, 10/10/2024'
         },
         {
             id: 2,
-            text: 'Learn React ❤️',
+            text: 'Turn of all of the lights 💡️',
             completed: false,
-            time: '5:22 AM, 01/06/2022'
+            time: '12:35, 10/10/2024'
         },
         {
             id: 3,
-            text: 'Create a Todo App 📝',
+            text: 'Checked everything above?',
             completed: false,
-            time: '5:21 AM, 01/06/2022'
+            time: '12:35, 10/10/2024'
         }
     ]);
 
     const [text, setText] = useState('');
+    const [editId, setEditId] = useState(null);  // For tracking the task being edited
+    const [editText, setEditText] = useState(''); // For storing edited text
 
     function addTask() {
         const newTask = {
@@ -50,6 +52,23 @@ function TodoList() {
         }));
     }
 
+    function startEditing(task) {
+        setEditId(task.id);
+        setEditText(task.text);
+    }
+
+    function saveEdit(id) {
+        setTasks(tasks.map(task => {
+            if (task.id === id) {
+                return { ...task, text: editText };
+            } else {
+                return task;
+            }
+        }));
+        setEditId(null);
+        setEditText('');
+    }
+
     return (
         <div className="todo-list-container">
             <h1 className="title">TODO LIST</h1>
@@ -68,6 +87,11 @@ function TodoList() {
                         task={task}
                         deleteTask={deleteTask}
                         toggleCompleted={toggleCompleted}
+                        startEditing={startEditing}    // Pass startEditing
+                        editId={editId}                // Pass editId to check which task is being edited
+                        editText={editText}            // Pass the current edited text
+                        setEditText={setEditText}      // Function to update the editText
+                        saveEdit={saveEdit}            // Function to save the edited task
                     />
                 ))}
             </div>
