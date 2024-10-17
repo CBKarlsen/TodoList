@@ -1,38 +1,109 @@
-.App {
+/* Todo List container */
+.todo-list-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f0f2f5;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.title {
   text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4A4A4A;
+  margin-bottom: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Add Task input and button */
+.add-task-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.add-task-container input {
+  width: 75%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.add-task-button {
+  padding: 10px 20px;
+  background-color: #6f59e4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-task-button:hover {
+  background-color: #5a47b5;
+}
+
+/* Tasks container */
+.tasks-container {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+}
+
+/* Individual task styling */
+.task-item {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.App-link {
-  color: #61dafb;
+.task-item.completed {
+  text-decoration: line-through;
+  background-color: #d1ffd1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Task details */
+.task-details {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.task-text {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.task-time {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* Icon buttons */
+.delete-btn, .edit-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.delete-btn:hover {
+  color: red;
+}
+
+.edit-btn:hover {
+  color: #f39c12;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+  margin-right: 15px;
 }
