@@ -1,12 +1,13 @@
-# Getting Started with Create React App
+# Todo list web app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a react web app which is for adding and removing chores to a Todo list. Might wanna use this later for some other projects.
+<br>
 
-## Available Scripts
+## What does it look like?
 
-In the project directory, you can run:
+![Picture of application](TodoListapplication.png)
 
-### `npm start`
+### `npm start` -- to start the app
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
